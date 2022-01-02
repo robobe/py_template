@@ -17,13 +17,19 @@ lint:  ## Run linting
 .PHONY: lint
 
 lint-fix:  ## Run autoformatters
-	poetry run black .
-	poetry run isort .
+	run black .
+	run isort .
 .PHONY: lint-fix
 
 typecheck:  ## Run typechecking
 	mypy --show-error-codes --pretty .
 .PHONY: typecheck
+
+clean:
+	find . -name '*.pyc' -delete
+	rm -rf dist
+	rm -rf build
+	rm -rf *.egg-info
 
 .DEFAULT_GOAL := help
 help: Makefile
