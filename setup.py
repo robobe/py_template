@@ -1,16 +1,7 @@
-from setuptools import setup, find_packages
+from setuptools import find_packages, setup
 
-REQUIREMENTS = [
-    'structlog'
-]
-DEV_REQUIREMENTS = [
-    "mkdocs",
-    "mkdocs-material",
-    "flake8",
-    "mypy",
-    "black",
-    "isort"
-]
+REQUIREMENTS = ['structlog']
+DEV_REQUIREMENTS = ["mkdocs", "mkdocs-material", "flake8", "mypy", "black", "isort"]
 
 with open('README.md', 'r') as fh:
     long_description = fh.read()
@@ -21,10 +12,6 @@ setup(
     long_description=long_description,
     packages=find_packages(include=['py_template', 'py_template.*']),
     install_requires=REQUIREMENTS,
-    extras_require={
-        "dev": DEV_REQUIREMENTS
-    },
-    entry_points={
-        'console_scripts': ['my-command=py_template.example:main']
-    }
+    extras_require={"dev": DEV_REQUIREMENTS},
+    entry_points={'console_scripts': ['my-command=py_template.example:main']},
 )
