@@ -7,7 +7,9 @@ DEV_REQUIREMENTS = [
     "mkdocs",
     "mkdocs-material",
     "flake8",
-    "mypy"
+    "mypy",
+    "black",
+    "isort"
 ]
 
 with open('README.md', 'r') as fh:

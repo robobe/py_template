@@ -52,3 +52,44 @@
 ```
 "python.linting.mypyEnabled": true
 ```
+
+
+## Formatters
+- black
+- isort
+  
+### config
+!!! Note
+    config via `myproject.toml` `black` support only this option
+    `isort` support both `setup.cfg` but i move his be together with `black`
+
+```json
+"python.formatting.provider": "black",
+    "[python]": {
+        "editor.formatOnSave": true,
+        "editor.codeActionsOnSave": {
+            "source.organizeImports": true
+        }
+    }
+```
+
+```
+--8<-- "pyproject.toml"
+```
+
+### format control
+- fmt: off
+- fmt: on (default but must switch to `on` after `off` section to control format again)
+
+
+```python
+# fmt: off
+custom_formatting = [
+    0, 1, 2,
+    3, 4, 5,
+    6, 7, 8,
+]
+
+# fmt: on
+regular_formatting = [0, 1, 2, 3, 4, 5, 6, 7, 8]
+```
