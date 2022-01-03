@@ -1,6 +1,5 @@
-def foo() -> None:
-    my_data = [1, 2, 3]
-    print(my_data)
+def foo() -> bool:
+    return False
 
 
 def main() -> None:

@@ -5,6 +5,7 @@ from setuptools import find_packages, setup
 
 REQUIREMENTS = ['structlog']
 DEV_REQUIREMENTS = ["mkdocs", "mkdocs-material", "flake8", "mypy", "black", "isort"]
+TEST_REQUIREMENTS = ["pytest"]
 
 
 def handle_version() -> str:
@@ -36,6 +37,6 @@ setup(
     long_description=long_description,
     packages=find_packages(include=['py_template', 'py_template.*']),
     install_requires=REQUIREMENTS,
-    extras_require={"dev": DEV_REQUIREMENTS},
+    extras_require={"dev": DEV_REQUIREMENTS, "test": TEST_REQUIREMENTS},
     entry_points={'console_scripts': ['my-command=py_template.example:main']},
 )

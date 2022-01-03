@@ -10,6 +10,10 @@ package:  ## Create package
 	python setup.py sdist
 .PHONY: package
 
+test:  ## Run tests
+	pytest .
+.PHONY: test
+
 lint:  ## Run linting
 	black --check .
 	isort -c .
